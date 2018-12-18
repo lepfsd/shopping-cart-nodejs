@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Store</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a 
+          class="nav-link" href="/shopping-cart/">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart
+          <span style="color:rgb(56, 54, 54);" class="badge">{{session.cart.totalQty}}</span>
+        </a>
+      </li>
+      {{#if login }}
+        <li class="nav-item">
+          <a class="nav-link" href="/user/profile"><i class="fa fa-user" aria-hidden="true"></i> User acount</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> logout</a>
+        </li>
+      {{ else }}
+        <li class="nav-item">
+          <a class="nav-link" href="/user/signin"><i class="fa fa-unlock" aria-hidden="true"></i> Sign in</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/signup"><i class="fa fa-user-plus" aria-hidden="true"></i>  Sign up</a>
+        </li>
+      {{/if}}
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>

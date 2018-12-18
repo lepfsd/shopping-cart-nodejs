@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-sm-6 col-md-12">
+        <h3>checkout</h3>
+        <h4>your total: $ {{total}}</h4>
+        <div id="charge-error" class="alert alert-danger {{#if noError}}hidden{{/if}}">
+            {{errMsg}}
+        </div>
+        <hr>
+        <form action="/checkout" method="post" id="checkout-form">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="card-name">Card holder name</label>
+                        <input type="text" id="card-name" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="card-number">Card number</label>
+                        <input type="text" id="card-number" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="expiration-month">Expiration month</label>
+                        <input type="text" id="expiration-month" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="expiration-year">Expiration year</label>
+                        <input type="text" id="expiration-year" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="card-cvc">CVC</label>
+                        <input type="text" id="card-cvc" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+            <button type="submit"  class="btn btn-outline-success my-2 my-sm-0">Buy now</button>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" scr="http://js.stripe.com/v2/"></script>
+<script type="text/javascript" scr="javascript/checkout.js"></script>
